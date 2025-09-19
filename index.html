@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Solbull Rush</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Preload core images for faster start -->
+    <link rel="preload" as="image" href="assets/solbullFrame1.png">
+    <link rel="preload" as="image" href="assets/solbullFrame2.png">
+    <link rel="preload" as="image" href="assets/duckFrame.png">
+    <link rel="preload" as="image" href="assets/bear.png">
+    <link rel="preload" as="image" href="assets/platforms/platform1.png">
+    <link rel="preload" as="image" href="assets/background.png">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <h1>SolBull Rush</h1>
+        <button id="start-button">Start Game</button>
+        <div class="controls">
+            <p><strong>Controls:</strong></p>
+            <p>← → Arrow Keys: Move Left/Right</p>
+            <p>↑ or Space: Jump</p>
+            <p>↓ Arrow Key: Duck</p>
+            <div class="about">
+                <p><strong>Objective</strong>: "eat as many bears as you can in 30 seconds".</p>
+                <p><strong>Speed orbs</strong>: Grab yellow ⚡ orbs to boost running speed for 5 seconds; a lightning icon appears under the HUD while active.</p>
+                <p><strong>Warning</strong>: Avoid the red lasers — touching any red laser kills you.</p>
+              </div>
+              
+        </div>
+    </div>
+    
+    <!-- Game Container -->
+    <div id="game-container" style="display: none;">
+        <div id="speed-boost-icon">⚡️</div>
+        <button id="mute-toggle" aria-label="Toggle Sound" title="Toggle Sound">🔊</button>
+        <img id="bull" src="assets/solbullFrame1.png" alt="Running Bull">
+        <div id="touch-controls" aria-label="Touch Controls">
+            <div class="tc-left">
+              <button id="tc-left"  aria-label="Move Left">◀️</button>
+              <button id="tc-right" aria-label="Move Right">▶️</button>
+            </div>
+            <div class="tc-right">
+              <button id="tc-duck" aria-label="Duck">⬇️</button>
+              <button id="tc-jump" aria-label="Jump">⤴️</button>
+            </div>
+          </div>
+    </div>
+
+    <!-- Pause Overlay -->
+    <div id="pause-overlay" style="display: none;">
+        <div class="po-card">
+            <h2>Paused</h2>
+            <p>Tap to resume</p>
+        </div>
+    </div>
+    
+    <!-- End Screen -->
+    <div id="end-screen" style="display: none;">
+        <h1 id="game-over-title">Game Over!</h1>
+        <p id="death-reason" class="death-reason"></p>
+        <div class="final-score">
+            <h2>Final Score</h2>
+            <p class="score-number" id="final-bear-count">0</p>
+            <p class="score-label">Bears Eaten</p>
+        </div>
+        <div class="end-buttons">
+            <button id="restart-button">Play Again</button>
+            <button id="main-menu-button">Main Menu</button>
+        </div>
+        <div class="end-controls">
+            <p>Press <strong>R</strong> to restart or <strong>M</strong> for main menu</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
